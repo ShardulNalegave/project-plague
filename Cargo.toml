@@ -3,3 +3,6 @@ name = "plague"
 version = "0.1.0"
 authors = ["Shardul Nalegave <nalegaveshardul40@gmail.com>"]
 edition = "2018"
+
+[dependencies]
+ggez = "0.5.1"
