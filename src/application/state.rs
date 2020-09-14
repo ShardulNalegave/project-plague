@@ -16,7 +16,8 @@ impl ggez::event::EventHandler for ApplicationState {
   fn update(&mut self, _ctx: &mut Context) -> GameResult<()> { Ok(()) }
 
   fn draw(&mut self, ctx: &mut Context) -> GameResult<()> {
-    graphics::clear(ctx, [0.0, 0.0, 0.0, 1.0].into());
+    graphics::set_window_title(ctx, "Plague");
+    graphics::clear(ctx, [0.1, 0.12, 0.15, 1.0].into());
     graphics::present(ctx)?;
     Ok(())
   }
