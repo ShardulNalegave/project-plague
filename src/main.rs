@@ -1,6 +1,10 @@
 
-mod application;
+use ggez::GameResult;
 
-fn main() {
-  application::runApplication();
+mod application;
+use application::Application;
+
+fn main() -> GameResult<()> {
+  let app = Application::new();
+  app.run()
 }
