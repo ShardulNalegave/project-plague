@@ -1,12 +1,17 @@
 
 use ggez;
 use ggez::{graphics, Context, GameResult};
+use crate::Human;
 
-pub struct ApplicationState {}
+pub struct ApplicationState {
+  humans: Vec<Human>,
+}
 
 impl ApplicationState {
   pub fn new() -> GameResult<ApplicationState> {
-    let state = ApplicationState {};
+    let state = ApplicationState {
+      humans: Vec::new(),
+    };
     Ok(state)
   }
 }

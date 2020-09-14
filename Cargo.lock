@@ -257,6 +257,17 @@ dependencies = [
 ]
 
 [[package]]
+name = "cgmath"
+version = "0.17.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "283944cdecc44bf0b8dd010ec9af888d3b4f142844fdbe026c20ef68148d6fe7"
+dependencies = [
+ "approx",
+ "num-traits 0.2.12",
+ "rand 0.6.5",
+]
+
+[[package]]
 name = "clang-sys"
 version = "0.29.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1399,6 +1410,7 @@ checksum = "d36492546b6af1463394d46f0c834346f31548646f6ba10849802c9c9a27ac33"
 name = "plague"
 version = "0.1.0"
 dependencies = [
+ "cgmath",
  "ggez",
 ]
 
