@@ -2,12 +2,7 @@
 use cgmath as math;
 use ggez;
 use ggez::{graphics, Context, GameResult};
-
-use crate::ui::{
-  Widget,
-  BuildContext,
-  Container,
-};
+use crate::ui::{BuildContext, Container, Scaffold, ScaffoldConfig};
 
 pub struct ApplicationState {}
 
@@ -26,15 +21,20 @@ impl ggez::event::EventHandler for ApplicationState {
     graphics::clear(ctx, [0.1, 0.12, 0.15, 1.0].into());
 
     {
-      let mut build_context = BuildContext {
-        draw_context: ctx,
-      };
-      let mut container = Container {
-        pos: math::Vector2 { x: 0.0, y: 0.0 },
-        size: math::Vector2 { x: 150.0, y: 100.0 },
-        color: graphics::WHITE,
-      };
-      container.build(&mut build_context);
+      let screen_dim = graphics::screen_coordinates(ctx);
+      Scaffold::new(
+        BuildContext {
+          draw_context: ctx,
+        },
+        ScaffoldConfig {
+          screen_dim: math::Vector2 { x: screen_dim.w, y: screen_dim.h },
+        },
+        Box::new(Container {
+          pos: math::Vector2 { x: (screen_dim.w / 2_f32) - 150.0, y: (screen_dim.h / 2_f32) - 125.0 },
+          size: math::Vector2 { x: 300.0, y: 250.0 },
+          color: graphics::WHITE,
+        }),
+      ).render();
     }
 
     graphics::present(ctx)?;

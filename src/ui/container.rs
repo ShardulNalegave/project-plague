@@ -11,7 +11,7 @@ pub struct Container {
 }
 
 impl Widget for Container {
-  fn build(&mut self, ctx: &mut BuildContext) -> ggez::GameResult<()> {
+  fn render(&mut self, ctx: &mut BuildContext) -> ggez::GameResult<()> {
     let mut rect = graphics::Mesh::new_rectangle(
       ctx.draw_context,
       graphics::DrawMode::fill(),

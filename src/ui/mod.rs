@@ -1,11 +1,15 @@
 
 use ggez;
 
+mod scaffold;
+pub use scaffold::Scaffold;
+pub use scaffold::ScaffoldConfig;
+
 mod container;
 pub use container::Container;
 
 pub trait Widget {
-  fn build(&mut self, _ctx: &mut BuildContext) -> ggez::GameResult<()>;
+  fn render(&mut self, _ctx: &mut BuildContext) -> ggez::GameResult<()>;
 }
 
 pub struct BuildContext<'a> {
