@@ -13,7 +13,7 @@ pub struct Application {
 impl Application {
   pub fn new() -> Self {
     let context_builder = ContextBuilder::new("plague", "shardul_nalegave");
-    Self { context_builder, state: ApplicationState::new().unwrap(), }
+    Self { context_builder, state: ApplicationState::new(), }
   }
 
   pub fn run(mut self) -> GameResult<()> {
