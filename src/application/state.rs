@@ -26,6 +26,7 @@ impl ggez::event::EventHandler for ApplicationState {
     graphics::clear(ctx, [0.1, 0.12, 0.15, 1.0].into());
 
     for human in self.humans.iter_mut() {
+      human.walk();
       human.render(ctx).unwrap();
     }
 

@@ -1412,6 +1412,7 @@ version = "0.1.0"
 dependencies = [
  "cgmath",
  "ggez",
+ "rand 0.7.3",
 ]
 
 [[package]]
