@@ -16,9 +16,10 @@ impl Human {
   }
 
   pub fn walk(&mut self) {
+    let mut rng = rand::thread_rng();
     self.pos = math::Vector2 {
-      x: self.pos.x + rand::thread_rng().gen::<f32>(),
-      y: self.pos.y + rand::thread_rng().gen::<f32>(),
+      x: self.pos.x + (rng.gen_range(-3, 5) as f32),
+      y: self.pos.y + (rng.gen_range(-3, 5) as f32),
     };
   }
 
